@@ -9,14 +9,16 @@
 
 
   // load in and set up trivia data
-  const trivia = '[ { "question": "What is Taylor Swift\’s lucky number?", "answer": "13" }, { "question": "What song did Taylor win her first Grammy for?", "answer": "White Horse" }, { "question": "What cafe was Taylor discovered at?", "answer": "Bluebird Cafe" }, { "question": "What is Taylor’s middle name?", "answer": "Alison" }, { "question": "How many Grammys did Taylor win in 2010?", "answer": "4" }, { "question": "How tall is Taylor?", "answer": "5 ft 10 in" }, { "question": "What song got an iHeartRadio Best Lyric award?", "answer": "Blank Space" }, { "question": "Who was Taylor named after?", "answer": "James Taylor" }, { "question": "Name 3 acting credits Taylor has", "answer": "Valentine’s Day; New Girl; CSI; Cats;" }, { "question": "Taylor is the godmother for which celebrity\’s kid?", "answer": "Jaime King" } ]'
+  const trivia = '[ { "question": "What is Taylor Swift’s lucky number?", "answer": "13" }, { "question": "What song did Taylor win her first Grammy for?", "answer": "White Horse" }, { "question": "What cafe was Taylor discovered at?", "answer": "Bluebird Cafe" }, { "question": "What is Taylor’s middle name?", "answer": "Alison" }, { "question": "How many Grammys did Taylor win in 2010?", "answer": "4" }, { "question": "How tall is Taylor?", "answer": "5 ft 10 in" }, { "question": "What song got an iHeartRadio Best Lyric award?", "answer": "Blank Space" }, { "question": "Who was Taylor named after?", "answer": "James Taylor" }, { "question": "Name 3 acting credits Taylor has", "answer": "Valentine’s Day; New Girl; CSI; Cats;" }, { "question": "Taylor is the godmother for which celebrity\’s kid?", "answer": "Jaime King" } ]'
   const trivia_json_obj = JSON.parse(trivia);
+  console.log(trivia_json_obj[0].question)
   var trivia_len = trivia_json_obj.length;
 
 
   // load in and set up 'guess the lyric data'
-
-
+  const lyrics = "Clear blue water, high tide came and brought you in\nAnd I could go on and on, on and on, and I will\nSkies grew darker, currents swept you out again\nAnd you were just gone and gone, gone and gone\nIn silent screams,\nin wildest dreams\nI never dreamed of this\nThis love is good, this love is bad\nThis love is alive back from the dead\nThese hands had to let it go free\nAnd this love came back to me\nTossing, turning, struggled through the night with someone new\nAnd I could go on and on, on and on\nLantern burning, flickered in my mind for only you\nBut you're still gone, gone, gone\nBeen losing grip,\noh, sinking ships\nYou showed up just in time\nThis love is good, this love is bad\nThis love is alive back from the dead\nThese hands had to let it go free\nAnd this love came back to me\nThis love left a permanent mark\nThis love is glowing in the dark\nThese hands had to let it go free\nAnd this love came back to me\nThis love, this love, this love, this love... \nYour kiss, my cheek, I watched you leave\nYour smile, my ghost, I fell to my knees\nWhen you're young you just run\nBut you come back to what you need\nThis love is good, this love is bad\nThis love is alive back from the dead\nThese hands had to let it go free\nAnd this love came back to me\nThis love left a permanent mark\nThis love is glowing in the dark\nThese hands had to let it go free\nAnd this love came back to me\nThis love, this love, this love, this love...\n---\nYou stand with your hand on my waist line\nIt's a scene and we're out here in plain sight\nI can hear them whisper as we pass by\nIt's a bad sign, bad sign\nSomething happens when everybody finds out\nSee the vultures circling dark clouds\nLove's a fragile little flame, it could burn out\nIt could burn out \nCause they got the cages, they got the boxes\nAnd guns\nThey are the hunters, we are the foxes\nAnd we run\nBaby, I know places we won't be found \nAnd they'll be chasing their tails tryin' to track us down\nCause I, I know places we can hide\nI know places, I know places\nLights flash and we'll run for the fences\nLet them say what they want, we won't hear it\nLoose lips sink ships all the damn time\nNot this time \nJust grab my hand and don't ever drop it\nMy love\nThey are the hunters, we are the foxes\nAnd we run\nBaby, I know places we won't be found \nAnd they'll be chasing their tails tryin' to track us down\nCause I, I know places we can hide\nI know places \nThey are the hunters, we are the foxes\nAnd we run\nJust grab my hand and don't ever drop it\nMy love\nBaby, I know places we won't be found \nAnd they'll be chasing their tails tryin' to track us down\nCause I, I know places we can hide\nI know places\nThey take their shots, but we're bulletproof\nI know places\nAnd you know for me, it's always you\nI know places\nIn the dead of night, your eyes so green\nI know places\nAnd I know for you, it's always me\nI know places\n---\nThe drought was the very worst\nWhen the flowers that we'd grown together died of thirst\nIt was months, and months of back and forth\nYou're still all over me like a wine-stained dress I can't wear anymore\nHung my head as I lost the war, and the sky turned black like a perfect storm\nRain came pouring down when I was drowning\nThat's when I could finally breathe\nAnd by morning gone was any trace of you,\nI think I am finally clean\nThere was nothing left to do\nWhen the butterflies turned to dust that covered my whole room\nSo I punched a hole in the roof\nLet the flood carry away all my pictures of you\nThe water filled my lungs, I screamed so loud but no one heard a thing\nRain came pouring down when I was drowning\nThat's when I could finally breathe\nAnd by morning, gone was any trace of you,\nI think I am finally clean\nI think I am finally clean\nSaid I think I am finally clean\n10 months sober, I must admit\nJust because you're clean don't mean you don't miss it\n10 months older, I won't give in\nNow that I'm clean I'm never gonna risk it\nThe drought was the very worst\nWhen the flowers that we'd grown together died of thirst\nRain came pouring down when I was drowning\nThat's when I could finally breathe\nAnd by morning gone was any trace of you,\nI think I am finally clean\nRain came pouring down when I was drowning\nThat's when I could finally breathe\nAnd by morning gone was any trace of you\nI think I am finally clean\nFinally clean\nThink I'm finally clean\nThink I'm finally clean\n"
+  const lyric_arr = lyrics.split("\n")
+  var lyric_len = lyric_arr.length
   /**
    * Easy selector helper function
    */
@@ -169,7 +171,9 @@
   //   }
   // }, true)
 
-
+  /**
+   * Finish the lyric starts
+   */
   on('click', '#clickGTL', function(e) {
       e.preventDefault()
 
@@ -178,9 +182,25 @@
       let bar = select("#GTLinner")
       let lyric = select("#theLyric");
       let answer = select("#gtl_answer")
-      answer.innerHTML = "something"
-      console.log(bar.style)
+      answer.innerHTML = ""
+
+      // retieve lyrics
+      var lyric1 = "---"
+      var lyric2 = "---"
+      var ans1 = "---"
+      var ans2 = "---"
+      while (lyric1 == "---"|| lyric2 == "---" || ans1 == "---" || ans2 == "---") {
+        var pos = Math.floor(Math.random() * (lyric_len-4))
+        console.log(pos)
+        lyric1 = lyric_arr[pos]
+        lyric2 = lyric_arr[pos + 1]
+        ans1 = lyric_arr[pos + 2]
+        ans2 = lyric_arr[pos + 3]
+      }
+
+      // reveal div
       bar.style.visibility = "visible"
+      lyric.innerHTML = lyric1 + ";\n\n" + lyric2
       lyric.style.visibility = "visible"
       select("#clickGTLa").style.pointerEvents = 'none'
 
@@ -191,6 +211,7 @@
 
       // reveal answer
       setTimeout(() => {  
+          answer.innerHTML = ans1 + ";\n\n" + ans2
           answer.style.visibility = "visible"
           select("#refreshGTLa").style.pointerEvents = 'auto'
           select("#clickGTLa").style.pointerEvents = 'auto'

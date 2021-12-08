@@ -7,6 +7,16 @@
 (function() {
   //"use strict";
 
+
+  // load in and set up trivia data
+  const trivia = '[ { "question": "What is Taylor Swift\’s lucky number?", "answer": "13" }, { "question": "What song did Taylor win her first Grammy for?", "answer": "White Horse" }, { "question": "What cafe was Taylor discovered at?", "answer": "Bluebird Cafe" }, { "question": "What is Taylor’s middle name?", "answer": "Alison" }, { "question": "How many Grammys did Taylor win in 2010?", "answer": "4" }, { "question": "How tall is Taylor?", "answer": "5 ft 10 in" }, { "question": "What song got an iHeartRadio Best Lyric award?", "answer": "Blank Space" }, { "question": "Who was Taylor named after?", "answer": "James Taylor" }, { "question": "Name 3 acting credits Taylor has", "answer": "Valentine’s Day; New Girl; CSI; Cats;" }, { "question": "Taylor is the godmother for which celebrity\’s kid?", "answer": "Jaime King" } ]'
+  const trivia_json_obj = JSON.parse(trivia);
+  var trivia_len = trivia_json_obj.length;
+
+
+  // load in and set up 'guess the lyric data'
+
+
   /**
    * Easy selector helper function
    */
@@ -172,6 +182,7 @@
       console.log(bar.style)
       bar.style.visibility = "visible"
       lyric.style.visibility = "visible"
+      select("#clickGTLa").style.pointerEvents = 'none'
 
       // run the animation
       bar.classList.remove("in");
@@ -181,6 +192,8 @@
       // reveal answer
       setTimeout(() => {  
           answer.style.visibility = "visible"
+          select("#refreshGTLa").style.pointerEvents = 'auto'
+          select("#clickGTLa").style.pointerEvents = 'auto'
       }, 20000);
   }, true)
 
@@ -193,7 +206,74 @@
       bar.style.visibility = "hidden"
       lyric.style.visibility = "hidden"
       answer.style.visibility = "hidden"
+      select("#clickGTLa").style.pointerEvents = 'auto'
+      select("#refreshGTLa").style.pointerEvents = 'none'
   }, true)
+
+  /**
+   * Taylor Trivia starts
+   */
+  on('click', '#clickTT', function(e) {
+      e.preventDefault()
+
+      // set variables
+      console.log("changing?")
+      let bar = select("#TTinner")
+      let question = select("#tt_question");
+      let answer = select("#tt_answer")
+      answer.innerHTML = ""
+      console.log(bar.style)
+
+      // retrive Q and A
+      var curr_qa = null
+      while (curr_qa == null) {
+        var pos = Math.floor(Math.random() * trivia_len);
+        curr_qa = trivia_json_obj[pos]
+      }
+      console.log(curr_qa)
+      var curr_ans = curr_qa.answer
+      var curr_qu = curr_qa.question
+
+      // make div visibele
+      bar.style.visibility = "visible"
+      question.innerHTML = curr_qu
+      question.style.visibility = "visible"
+      select("#clickTTa").style.pointerEvents = 'none'
+
+      // run the animation
+      bar.classList.remove("in");
+      void bar.offsetWidth;
+      bar.classList.add("in")
+
+      // reveal answer
+      setTimeout(() => {  
+          answer.innerHTML = curr_ans
+          answer.style.visibility = "visible"
+          select("#refreshTTa").style.pointerEvents = 'auto'
+          select("#clickTTa").style.pointerEvents = 'auto'
+      }, 20000);
+
+      // update trivia json
+      delete trivia_json_obj[pos]
+      trivia_len = trivia_len - 1
+
+
+  }, true)
+
+  // reset trivia div
+  on('click', '#refreshTT', function(e) {
+      e.preventDefault()
+      let bar = select("#TTinner")
+      let lyric = select("#tt_question");
+      let answer = select("#tt_answer")
+      console.log(bar.style)
+      bar.style.visibility = "hidden"
+      lyric.style.visibility = "hidden"
+      answer.style.visibility = "hidden"
+      select("#clickTTa").style.pointerEvents = 'auto'
+      select("#refreshTTa").style.pointerEvents = 'none'
+  }, true)
+
 
   /**
    * Guess that song starts
@@ -289,26 +369,3 @@
   });
 
 })()
-
-// function runGTS() {
-//   // body..
-//   let answer = select("#gts_answer")
-//       console.log(answer.innerHTML)
-//       setTimeout(() => {  
-//         // document.getElementById("#helpme").innerHTML = "fuck"
-//         answer.innerHTML = 'hello'
-//         console.log(answer.innerHTML)
-//         // answer.contentWindow.location.reload(true);
-//       }, 2000);
-// }
-
-function changeThis() {
-  // console.log("changing?")
-  // setTimeout(() => {  
-  //   let bleh = document.getElementById("GTLcontent")
-  //   console.log(bleh)
-  //   bleh.style.visibility = "visible"
-
-  //   // answer.contentWindow.location.reload(true);
-  // }, 2000);
-}

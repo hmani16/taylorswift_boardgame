@@ -11,7 +11,6 @@
   // load in and set up trivia data
   const trivia = '[ { "question": "What is Taylor Swift’s lucky number?", "answer": "13" }, { "question": "What song did Taylor win her first Grammy for?", "answer": "White Horse" }, { "question": "What cafe was Taylor discovered at?", "answer": "Bluebird Cafe" }, { "question": "What is Taylor’s middle name?", "answer": "Alison" }, { "question": "How many Grammys did Taylor win in 2010?", "answer": "4" }, { "question": "How tall is Taylor?", "answer": "5 ft 10 in" }, { "question": "What song got an iHeartRadio Best Lyric award?", "answer": "Blank Space" }, { "question": "Who was Taylor named after?", "answer": "James Taylor" }, { "question": "Name 3 acting credits Taylor has", "answer": "Valentine’s Day; New Girl; CSI; Cats;" }, { "question": "Taylor is the godmother for which celebrity\’s kid?", "answer": "Jaime King" } ]'
   const trivia_json_obj = JSON.parse(trivia);
-  console.log(trivia_json_obj[0].question)
   var trivia_len = trivia_json_obj.length;
 
 

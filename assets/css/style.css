@@ -682,7 +682,7 @@ section {
   padding: 40px;
 }
 .about-lists .row {
-  overflow: hidden;
+  overflow: scroll;
 }
 .about-lists .content-item {
   padding: 40px;
@@ -808,7 +808,7 @@ section {
 # Our Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .portfolio #portfolio-flters {
   padding: 0;
@@ -957,6 +957,10 @@ a i {
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
+}
+
+.GTL_square {
+  overflow: scroll;
 }
 
 #GTLcontent {

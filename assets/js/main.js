@@ -5,7 +5,7 @@
 * License: https://bootstrapmade.com/license/
 */
 (function() {
-  //"use strict";
+  "use strict";
 
 
   // load in and set up trivia data

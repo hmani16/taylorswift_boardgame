@@ -890,6 +890,12 @@ a i {
   font-size: 22px;
   line-height: 0;
 }
+
+.challenge-logo {
+  font-size: 45px;
+  line-height: 0;
+  color: #5c768d;
+}
 .portfolio .portfolio-wrap .portfolio-info a:hover {
   background: #428bca;
   color: #fff;
@@ -961,6 +967,7 @@ a i {
 
 .GTL_square {
   overflow: scroll;
+  padding-top: 11px;
 }
 
 #GTLcontent {
@@ -989,28 +996,53 @@ a i {
 
 #theLyric {
   visibility: hidden;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 10px;
 }
 
 #tt_question {
   visibility: hidden;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 10px;
 }
 
+#gte_question {
+  visibility: hidden;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 10px;
+}
 
 #gtl_answer {
   visibility: hidden;
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 #gts_answer {
   visibility: hidden;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 10px;
 }
 
 #tt_answer {
   visibility: hidden;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 10px;
 }
 
 .GTL_square {
   align-items: center;
   text-align: center;
+}
+
+.challenge-header {
+  padding-top: 10px;
 }
 
 /*.popup .close {
@@ -1055,6 +1087,10 @@ a i {
   padding: 30px;
   /*box-shadow: 0px 0 30px rgba(31, 53, 72, 0.08);*/
 }
+
+.portfolio-info p {
+  text-transform: uppercase;
+}
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
   font-weight: 700;
@@ -1097,9 +1133,9 @@ a i {
 }
   .in {
     border: 1px solid #666;
-  height: 20px;
-  width: 100%;
-    animation: fill 13s linear 1;
+    height: 20px;
+    width: 100%;
+    animation: fill 10s linear 1;
     height: 100%;
     background-color: lightblue;
   }

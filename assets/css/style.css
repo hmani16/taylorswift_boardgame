@@ -986,6 +986,11 @@ a i {
   visibility: hidden;
 }
 
+#refreshGTSa {
+  pointer-events: none;
+}
+
+
 #refreshTTa {
   pointer-events: none;
 }
